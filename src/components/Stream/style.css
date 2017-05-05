@@ -1,0 +1,9 @@
+.trackitem {
+    display: block;
+    width: 360px;
+    padding: 12px;
+    background: #DFDFDF;
+    color: #DF3ABA;
+    margin: 6px 6px;
+    text-align: center;
+}

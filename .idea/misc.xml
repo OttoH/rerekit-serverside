@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="eclipseVersion" value="ECLIPSE_44" />
+    <option name="formatter" value="ECLIPSE" />
+    <option name="id" value="1431916765329" />
+    <option name="importOrdering" value="ECLIPSE_44" />
+    <option name="name" value="default" />
+    <option name="pathToConfigFileJava" value="$USER_HOME$/githouse/android-ecauction-manifests/android-formatting.xml" />
+    <option name="selectedJavaProfile" value="ECAuction_App" />
+    <option name="useOldEclipseJavaFormatter" value="true" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../../android/twitterExe" value="4277395716000" />
+        <entry key="$PROJECT_DIR$/../../physical-web/physical-web/android/PhysicalWeb" value="4290699735000" />
+        <entry key="$USER_HOME$/Downloads/activity-transitions-master" value="4273465104000" />
+        <entry key="$USER_HOME$/githouse/androidShp/ecshopping" value="116674946527000" />
+        <entry key="$USER_HOME$/githouse/ecauctionAS/ecauction" value="127417689573000" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" />
+</project>
