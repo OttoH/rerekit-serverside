@@ -2,16 +2,15 @@
 import React from 'react'
 
 class Callback extends React.Component {
-
-  componentDidMount() {
-    window.setTimeout(opener.SC.connectCallback, 1);
+  componentDidMount () {
+    window.setTimeout(opener.SC.connectCallback, 1)
   }
 
-  render() {
+  render () {
     return (
-        <div>
-            <p>This page should close soon.</p>
-        </div>
+      <div>
+        <p>This page should close soon.</p>
+      </div>
     )
   }
 }

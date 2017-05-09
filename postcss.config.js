@@ -1,4 +1,4 @@
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('autoprefixer')
 
 module.exports = {
   plugins: [
@@ -11,4 +11,4 @@ module.exports = {
       ]
     })
   ]
-};
+}

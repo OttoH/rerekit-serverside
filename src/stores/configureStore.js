@@ -17,7 +17,7 @@ const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
 
 // adding thunk later
 const configureStore = (initialState) => {
-    return createStoreWithMiddleware(reducers, initialState);
+  return createStoreWithMiddleware(reducers, initialState)
 }
 
 export default configureStore
