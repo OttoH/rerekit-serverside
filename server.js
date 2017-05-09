@@ -22,7 +22,11 @@ if (process.env.NODE_ENV === 'development') {
       chunkModules: false
     }
   }))
-  app.use(require('webpack-hot-middleware')(compiler))
+
+  app.use(require('webpack-hot-middleware')(compiler, {
+    log: console.log
+  }))
+
   app.use(express.static(path.resolve(__dirname, 'src')))
 } else if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, 'dist')))

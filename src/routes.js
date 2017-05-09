@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from './components/App/presenter'
-// import Callback from './components/Callback'
 import Stream from './components/Stream'
 
 export default (

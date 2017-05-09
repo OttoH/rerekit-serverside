@@ -6,6 +6,7 @@ module.exports = {
 
   entry: [
     'react-hot-loader/patch',
+    'webpack/hot/only-dev-server',
     'webpack-hot-middleware/client',
     path.resolve(__dirname, '../src')
   ],

@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
 import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 import configureStore from './stores/configureStore'
 import { actionCreators as tracksActionCreator } from './ducks/tracks'
 import Routes from './routes'
-import { CLIENT_ID, REDIRECT_URI } from './constants/auth'
+// import { CLIENT_ID, REDIRECT_URI } from './constants/auth'
 
 import './style/index.css'
 
@@ -43,7 +42,7 @@ ReactDOM.render(
     document.getElementById('app')
 )
 
-if (process.env.NODE_ENV == 'development' && module.hot) {
+if (process.env.NODE_ENV === 'development' && module.hot) {
   module.hot.accept('./reducers', () => {
     store.replaceReducer(require('./reducers').default)
   })
