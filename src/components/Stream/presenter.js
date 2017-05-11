@@ -9,22 +9,21 @@ class Stream extends React.Component {
       <div>
         <div>
           {
-                  user
-                    ? <div>{user.username}</div>
-                    : <button onClick={onAuth} type='button'>Login</button>
-                }
+          user ? <div>{user.username}</div>
+            : <span className={style.login} onClick={onAuth} type='button'>Login</span>
+          }
         </div>
         <div>
           {
-                    tracks.map((track, key) => {
-                      return (
-                        <div className={'track ' + style.trackitem}
-                          key={key}>
-                          {track.title}
-                        </div>
-                      )
-                    })
-                }
+            tracks.map((track, key) => {
+              return (
+                <div className={'track ' + style.trackitem}
+                  key={key}>
+                  {track.title}
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     )
