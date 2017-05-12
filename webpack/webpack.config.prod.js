@@ -1,20 +1,20 @@
-const webpack = require('webpack')
-const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
-const WebpackMd5Hash = require('webpack-md5-hash')
+var webpack = require('webpack')
+var path = require('path')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ManifestPlugin = require('webpack-manifest-plugin')
+var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
+var WebpackChunkHash = require('webpack-chunk-hash')
 
 module.exports = {
   context: path.resolve(__dirname, '..'),
 
   entry:
   {
+    vender: [
+      'react', 'react-dom', 'redux', 'react-redux', 'redux-thunk'
+    ],
     main: [
       './src/index'
-    ],
-    vender: [
-      'react', 'react-dom'
     ]
   },
 
@@ -27,10 +27,11 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['core'],
+      names: ['vendor', 'core'],
       minChunks: Infinity
     }),
-    new WebpackMd5Hash(),
+    new webpack.HashedModuleIdsPlugin(),
+    new WebpackChunkHash(),
     new ManifestPlugin(),
     new ChunkManifestPlugin({
       filename: 'chunk-manifest.json',

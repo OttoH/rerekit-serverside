@@ -7,6 +7,7 @@ class Stream extends React.Component {
     const { user, tracks = [], onAuth } = this.props
     return (
       <div>
+        <span />
         <div>
           {
           user ? <div>{user.username}</div>
