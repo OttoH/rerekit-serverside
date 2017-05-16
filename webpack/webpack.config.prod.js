@@ -19,7 +19,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist/bundle'),
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     publicPath: '/'
@@ -49,7 +49,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin({
-      filename: 'bundle.css',
+      filename: '[name].[contenthash].css',
       allChunks: true
     })
   ],

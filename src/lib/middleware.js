@@ -9,14 +9,15 @@ import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { match, RouterContext } from 'react-router'
-import reducers from '../src/reducers'
-import routes from '../src/routes'
+import reducers from '../reducers'
+import routes from '../routes'
 
 // core main vender
-const manifest = require('../dist/manifest.json')
-const coreFile = manifest['core.js']
-const mainFile = manifest['main.js']
-const venderFile = manifest['vender.js']
+const manifest = require('../../dist/bundle/manifest.json')
+const coreFile = 'bundle/' + manifest['core.js']
+const mainFile = 'bundle/' + manifest['main.js']
+const venderFile = 'bundle/' + manifest['vender.js']
+const cssFile = 'bundle/' + manifest['main.css']
 
 export default (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -34,7 +35,8 @@ export default (req, res) => {
             </header>
             <body>
               <div id='app'></div>
-              <script src='bundle.js'></script>
+              <script src='main.js'></script>
+              <script src='vendor.js'></script>
             </body>
           </html>
         `)
@@ -44,7 +46,7 @@ export default (req, res) => {
           <html>
             <header>
               <title>Little Universal App</title>
-              <link rel='stylesheet' href='bundle.css'>
+              <link rel='stylesheet' href='${cssFile}'>
               </header>
               <body>
                 <div id='app'>${renderToString(

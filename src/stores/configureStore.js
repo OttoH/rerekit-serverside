@@ -10,10 +10,11 @@ import {createLogger} from 'redux-logger'
 // fetch api need link to store
 import thunk from 'redux-thunk'
 
-const logger = createLogger()
 // const router = routerMiddleware(browserHistory)
 
-const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
+const createStoreWithMiddleware = process.env.NODE_ENV === 'development' 
+    ? applyMiddleware(thunk, createLogger())(createStore)
+    : applyMiddleware(thunk)(createStore)
 
 // adding thunk later
 const configureStore = (initialState) => {

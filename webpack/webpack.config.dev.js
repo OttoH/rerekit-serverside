@@ -4,16 +4,21 @@ var path = require('path')
 module.exports = {
   context: path.resolve(__dirname, '..'),
 
-  entry: [
-    'react-hot-loader/patch',
-    'webpack/hot/only-dev-server',
-    'webpack-hot-middleware/client',
-    path.resolve(__dirname, '../src')
-  ],
+  entry: {
+    main: [
+      'react-hot-loader/patch',
+      'webpack/hot/only-dev-server',
+      'webpack-hot-middleware/client',
+      path.resolve(__dirname, '../src')
+    ],
+    vendor: [
+      'react', 'react-dom', 'react-redux', 'redux'
+    ]
+  },
 
   output: {
     path: path.resolve(__dirname, '../src'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/'
   },
 
@@ -27,7 +32,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
 
-  devtool: 'cheap-module-source-map',
+  devtool: 'inline-source-map',
 
   module: {
     rules: [

@@ -7,7 +7,7 @@ import middleware from './lib/middleware'
 const app = express()
 
 if (process.env.NODE_ENV === 'development') {
-  const config = require('./webpack/webpack.config.dev')
+  const config = require('../webpack/webpack.config.dev')
   const compiler = webpack(config)
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
@@ -27,9 +27,9 @@ if (process.env.NODE_ENV === 'development') {
     log: console.log
   }))
 
-  app.use(express.static(path.resolve(__dirname, 'src')))
+  app.use(express.static(path.resolve(__dirname)))
 } else if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, 'dist')))
+  app.use(express.static(path.resolve(__dirname, '../dist')))
 }
 
 app.get('*', middleware)

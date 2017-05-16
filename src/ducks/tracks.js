@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
 }
 
 const applySetTracks = (state, action) => {
-  const { type, tracks } = action
+  const { tracks } = action
   return (
   {
     ...state,
