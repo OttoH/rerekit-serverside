@@ -1,0 +1,16 @@
+.itemContent {
+  height: 76px;
+}
+
+.img {
+  display: inline-block;
+  float: left;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.title {
+  float: left;
+  vertical-align: middle;
+  padding: 10px;
+}

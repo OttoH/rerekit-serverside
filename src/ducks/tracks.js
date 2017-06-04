@@ -6,7 +6,7 @@ const TRACKS_SET = 'tracks/TRACKS_SET'
 const doSetTracks = (tracks) => {
   return {
     type: TRACKS_SET,
-    tracks: tracks
+    payload: tracks
   }
 }
 
@@ -23,11 +23,11 @@ const reducer = (state = initialState, action) => {
 }
 
 const applySetTracks = (state, action) => {
-  const { tracks } = action
+  const { payload } = action
   return (
   {
     ...state,
-    tracks: tracks
+    tracks: payload
   }
   )
 }

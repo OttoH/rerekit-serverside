@@ -12,7 +12,7 @@ import thunk from 'redux-thunk'
 
 // const router = routerMiddleware(browserHistory)
 
-const createStoreWithMiddleware = process.env.NODE_ENV === 'development' 
+const createStoreWithMiddleware = process.env.NODE_ENV === 'development'
     ? applyMiddleware(thunk, createLogger())(createStore)
     : applyMiddleware(thunk)(createStore)
 
